@@ -142,6 +142,7 @@
     <ClCompile Include="DataStructure.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Basic\util.h" />
     <ClInclude Include="listNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
