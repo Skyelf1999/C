@@ -2,17 +2,16 @@
 #include <stdlib.h>
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main()
 {
-    vector<int> vInt(5,2);
-    for(int i=0;i<vInt.size();i++)
-        vInt[i] = i;
-    
-    vInt.erase(vInt.begin()+1,vInt.end()-2);
-    for(int i=0;i<vInt.size();i++)
-        cout<<vInt[i]<<endl;
+    vector<int> arr(2);
+    arr[0] = 1;
+    arr[1] = 3;
+    arr.push_back(5);
+    cout<<arr[2]<<endl;
 
     return 0;
 }
