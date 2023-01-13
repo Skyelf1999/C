@@ -3,39 +3,22 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include "testStruct.h"
 using namespace std;
 
 int main()
 {
-    int r,c;
+    PersonStruct dsh;
+    dsh.name = "dsh";
+    dsh.age = 23;
+    dsh.height = 164.5;
+    
+    struct PersonStruct* p = &dsh;
+    p->name = "htm";
 
-    vector<vector<int>> mat(3);
-    for(int i=0;i<3;i++)
-    {
-        vector<int> row(i+1);
-        for(int j=0;j<i+1;j++) row[j] = i+j;
-        mat[i] = row;
-    }
-    for(int i=0;i<3;i++)
-    {
-        vector<int>::iterator it;
-        for(it=mat[i].begin();it!=mat[i].end();it++)
-            cout<<*it<<endl;
-        cout<<"\n"<<endl;
-    }
+    cout<<dsh.name<<endl;
 
-    // vector<vector<int>> ret(r);
-
-    // for(int i=0;i<r;i++)
-    // {
-    //     vector<int> row(c);
-    //     for(int j=0;j<c;j++)
-    //     {
-    //         int index = i*r+c;
-    //         row.push_back(mat[index/m][index-index/m*n]);
-    //     }
-    //     ret.push_back(row);
-    // }
+    
 
 
     return 0;
