@@ -2,14 +2,14 @@
 #include <iostream>
 
 
+// Person::Person()
+// {
+
+// }
 Person::Person(string name, int age, bool gender) : name(name), age(age), gender(gender)
 {
 	curNum++;
 }
-//Person::Person(string name, int age, bool gender,int t) : name(name), age(age), gender(gender), tag(t)
-//{
-//	curNum++;
-//}
 
 
 Person::~Person()
