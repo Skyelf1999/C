@@ -17,6 +17,7 @@ public:
     ~Student();
     void setScore(float s);
     float getScore();
+    string getType();
 
 private:
     float score   = 0;
@@ -29,8 +30,7 @@ Student::Student(string name, int age, bool gender,int studentId,string school,i
 }
 Student::~Student()
 {
-    // curNum--;
-    cout << curNum << "\tStudent Clear" << endl;
+    cout << "Student Clear\t";
 }
 
 
@@ -41,4 +41,10 @@ void Student::setScore(float s)
 float Student::getScore()
 {
     return score;
+}
+
+
+string Student::getType()
+{
+    return "Student";
 }

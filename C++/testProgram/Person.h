@@ -26,6 +26,7 @@ public:
 	int getCurNum();
 	int getTag();
 	int getTag() const;
+	string getType();
 
 
 protected:
@@ -53,9 +54,13 @@ int Person::curNum = 0;
 void Person::printInfo()
 {
 	string sex;
-	if(gender) sex = "男";
-	else sex = "女";
-	cout << "姓名：" << name << "，年龄：" << age << "，性别：" << sex << endl;
+	if(gender) sex = "male";
+	else sex = "female";
+	cout << "\nPerson Property" << endl;
+	cout << name << endl;
+	cout << age << endl;
+	cout << sex << endl;
+	cout << "---------------------\n" <<endl;
 }
 
 
@@ -82,4 +87,9 @@ int Person::getTag() const
 {
 	cout << "此方法为const方法" << endl;
 	return tag;
+}
+
+string Person::getType()
+{
+	return "Person";
 }
