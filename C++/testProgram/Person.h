@@ -12,25 +12,25 @@ public:
 	bool gender 	= false;
 	const int tag 	= 1;
 
-	// ¹¹Ôì
+	// æ„é€ 
 	// Person();
-	Person(string name="ÎŞÃû", int age=0, bool gender = true);
+	Person(string name="æ— å", int age=0, bool gender = true);
 	
-	// Îö¹¹
+	// ææ„
 	~Person();
 	
-	// ³ÉÔ±·½·¨
+	// æˆå‘˜æ–¹æ³•
 	void printInfo();
 	void grow();
 	void setCurNum(int x);
 	int getCurNum();
 	int getTag();
 	int getTag() const;
-	string getType();
+	virtual string getType();
 
 
 protected:
-	static int curNum;		// ¼ÇÂ¼¹²ÓĞ¶àÉÙPerson¶ÔÏó
+	static int curNum;		// è®°å½•å…±æœ‰å¤šå°‘Personå¯¹è±¡
 };
 
 
@@ -85,7 +85,7 @@ int Person::getTag()
 }
 int Person::getTag() const
 {
-	cout << "´Ë·½·¨Îªconst·½·¨" << endl;
+	cout << "æ­¤æ–¹æ³•ä¸ºconstæ–¹æ³•" << endl;
 	return tag;
 }
 
