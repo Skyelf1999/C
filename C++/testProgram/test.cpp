@@ -35,13 +35,13 @@ int main()
     // int* temp = nullptr;
     // if(!temp) cout<<"空指针"<<endl;
     
-    // test();
+    test();
 
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
 
-    testSet();
+    // testSet();
     // testVector();
     // testStack();
     // testList();
@@ -64,15 +64,45 @@ int main()
     return 0;
 }
 
-bool com(vector<int> &a,vector<int> &b)
-{
-    return a[0]<b[0];
-}
+
 void test()
 {
-    vector<vector<int>> testV{{0,3},{2,7},{-1,4}};
-    sort(testV.begin(),testV.end());
-    cout<<testV[0][0]<<endl;
+    int n=4;
+    vector<vector<int>> ret(n,vector<int>(n));
+    if(n==0) return;
+    else if(n==1)
+    {
+        ret[0][0] = 1;
+        return;
+    }
+
+    int tag = 0;
+    int i=0,j=0;
+    int count = 1;
+    while(count<=n*n)
+    {
+        while(j<n-tag-1)
+        {
+            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
+            ret[i][j++] = count++;
+        }
+        while(i<n-tag-1) 
+        {
+            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
+            ret[i++][j] = count++;
+        }
+        while(j>tag){
+            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
+            ret[i][j--] = count++;
+        }
+        while(i>tag+1){
+            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
+            ret[i--][j] = count++;
+        }
+        printf("\n此轮结束， 下一轮起点：i=%d j=%d count=%d",i,j,count);
+        tag++;
+        if(tag>n/2) break;
+    }
 }
 
 
