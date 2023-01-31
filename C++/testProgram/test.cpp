@@ -8,6 +8,7 @@
 #include <queue>
 #include <list>
 #include <set>
+#include <utility>
 
 #include "testStruct.h"
 #include "Person.h"
@@ -20,10 +21,13 @@ using namespace std;
 // 测试函数
 void test();
 void testArray(int (*arr)[4]);
+
 void testSet();
 void testVector();
 void testStack();
 void testList();
+void testPair();
+
 void testStruct();
 void testPerson(int& x);
 void testStudent();
@@ -35,14 +39,15 @@ int main()
     // int* temp = nullptr;
     // if(!temp) cout<<"空指针"<<endl;
     
-    test();
+    // test();
 
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
 
+    // testPair();
     // testSet();
-    // testVector();
+    testVector();
     // testStack();
     // testList();
 
@@ -119,6 +124,16 @@ void testArray(int (*arr)[4])
 
 ////////////////////////////////// STL数据结构 //////////////////////////////////
 
+void testPair()
+{
+    pair<int,int> left(-1,0);
+    pair<int,int> dir = left;
+    pair<int,int> right(1,0);
+    cout<< (dir==left) << endl;
+    cout<< (dir==right) << endl;
+    cout<< (pair<int,int>(1,0)==right) << endl;
+}
+
 void testSet()
 {
     set<string> st{"cwf","htm"};
@@ -134,11 +149,15 @@ void testVector()
     for(it=v.begin();it!=v.end();it++) *it = 5-(it-v.begin());
     sort(v.begin(),v.end());
     cout<<v[1]<<endl;
-    cout<<v.at(5)<<endl;
+    // cout<<v.at(5)<<endl;
 
     vector<vector<int>> vv;
-    vv.push_back({1,2,3});
-    cout<<vv[0][1]<<endl;
+    vv.push_back({1,2});
+    vv.push_back({0,4});
+    vv.push_back({5,8});
+    vv.push_back({2,6});
+    sort(vv.begin(),vv.end());
+    for(int i=0;i<vv.size();i++) cout<<vv[i][0]<<endl;
 }
 
 
