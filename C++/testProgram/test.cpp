@@ -9,6 +9,7 @@
 #include <list>
 #include <set>
 #include <utility>
+#include <map>
 
 #include "testStruct.h"
 #include "Person.h"
@@ -27,6 +28,7 @@ void testVector();
 void testStack();
 void testList();
 void testPair();
+void testMap();
 
 void testStruct();
 void testPerson(int& x);
@@ -36,8 +38,10 @@ void testPlayer();
 
 int main()
 {
-    // int* temp = nullptr;
-    // if(!temp) cout<<"空指针"<<endl;
+    string s1 = "11";
+    string s2 = "13";
+    s2[1] = (char)(57);
+    cout<<s2<<endl;
     
     // test();
 
@@ -47,9 +51,10 @@ int main()
 
     // testPair();
     // testSet();
-    testVector();
+    // testVector();
     // testStack();
     // testList();
+    // testMap();
 
     // testStruct();
 
@@ -144,20 +149,32 @@ void testSet()
 
 void testVector()
 {
-    vector<int> v(5);
-    vector<int>::iterator it;
-    for(it=v.begin();it!=v.end();it++) *it = 5-(it-v.begin());
-    sort(v.begin(),v.end());
-    cout<<v[1]<<endl;
+    vector<int> v(1,1);
+    v.push_back(2);
+    vector<int> v2(3,3);
+    vector<int> v3(5,0);
+    copy(v2.begin(),v2.end(),v3.begin()+1);
+    cout<<v3[3]<<endl;
+    cout<<v3[4]<<endl;
     // cout<<v.at(5)<<endl;
+
+    cout<<"\n";
 
     vector<vector<int>> vv;
     vv.push_back({1,2});
     vv.push_back({0,4});
-    vv.push_back({5,8});
+    vv.push_back({5,8,7});
     vv.push_back({2,6});
     sort(vv.begin(),vv.end());
     for(int i=0;i<vv.size();i++) cout<<vv[i][0]<<endl;
+
+    cout<<"\n";
+
+    vector<vector<int>> unruledV(3);
+    unruledV[0] = vector<int>(4);
+    unruledV[1] = vector<int>(0);
+    for(int i=0;i<unruledV.size();i++) cout<< unruledV[i].size() <<endl;
+
 }
 
 
@@ -179,6 +196,13 @@ void testList()
     list<int> myList{5,3,2,4,9};
     myList.sort();
     cout<<myList.front()<<endl;
+}
+
+void testMap()
+{
+    map<string,int> mp;
+    mp["dsh"] += 23;
+    cout<<mp["htm"]<<endl;
 }
 
 
