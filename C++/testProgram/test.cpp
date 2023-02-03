@@ -21,6 +21,7 @@ using namespace std;
 
 // 测试函数
 void test();
+void testString();
 void testArray(int (*arr)[4]);
 
 void testSet();
@@ -38,13 +39,14 @@ void testPlayer();
 
 int main()
 {
-    string s1 = "11";
-    string s2 = "13";
-    s2[1] = (char)(57);
-    cout<<s2<<endl;
+    // string s1 = "11";
+    // string s2 = "13";
+    // s2[1] = (char)(57);
+    // cout<<s2<<endl;
     
     // test();
 
+    testString();
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
@@ -116,6 +118,15 @@ void test()
 }
 
 
+void testString()
+{
+    string s1 = "dsh";
+    cout<<(s1=="dsh")<<endl;
+    string s2 = "htm hahaha";
+    cout<<(s2[3]==' ')<<endl;
+}
+
+
 // 以行指针形式接受二维数组
 void testArray(int (*arr)[4])
 {
@@ -149,6 +160,7 @@ void testSet()
 
 void testVector()
 {
+    
     vector<int> v(1,1);
     v.push_back(2);
     vector<int> v2(3,3);
@@ -156,6 +168,8 @@ void testVector()
     copy(v2.begin(),v2.end(),v3.begin()+1);
     cout<<v3[3]<<endl;
     cout<<v3[4]<<endl;
+    v = vector<int>{3,3,3};
+    cout<<(v==v2)<<endl;
     // cout<<v.at(5)<<endl;
 
     cout<<"\n";
@@ -203,6 +217,12 @@ void testMap()
     map<string,int> mp;
     mp["dsh"] += 23;
     cout<<mp["htm"]<<endl;
+
+    map<char,string> mp2;
+    mp2['a']="dsh";
+    mp2['b'] = "htm";
+    cout<<(mp2['c']=="")<<endl;
+    cout<<mp2['a']<<endl;
 }
 
 
