@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <math.h>
 #include <algorithm>
 #include <string>
 #include <vector>
@@ -43,6 +44,7 @@ int main()
     // string s2 = "13";
     // s2[1] = (char)(57);
     // cout<<s2<<endl;
+    cout<<pow(10.0,2.0)<<endl;
     
     // test();
 
@@ -79,51 +81,24 @@ int main()
 
 void test()
 {
-    int n=4;
-    vector<vector<int>> ret(n,vector<int>(n));
-    if(n==0) return;
-    else if(n==1)
-    {
-        ret[0][0] = 1;
-        return;
-    }
-
-    int tag = 0;
-    int i=0,j=0;
-    int count = 1;
-    while(count<=n*n)
-    {
-        while(j<n-tag-1)
-        {
-            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
-            ret[i][j++] = count++;
-        }
-        while(i<n-tag-1) 
-        {
-            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
-            ret[i++][j] = count++;
-        }
-        while(j>tag){
-            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
-            ret[i][j--] = count++;
-        }
-        while(i>tag+1){
-            printf("\ntag=%d i=%d j=%d count=%d",tag,i,j,count);
-            ret[i--][j] = count++;
-        }
-        printf("\n此轮结束， 下一轮起点：i=%d j=%d count=%d",i,j,count);
-        tag++;
-        if(tag>n/2) break;
-    }
+    
 }
 
 
 void testString()
 {
+    // 比较
     string s1 = "dsh";
     cout<<(s1=="dsh")<<endl;
     string s2 = "htm hahaha";
     cout<<(s2[3]==' ')<<endl;
+    printf("\n");
+
+    // 赋值
+    string s3 = s1;
+    s1 += "?";
+    cout<<s3<<endl;
+
 }
 
 
@@ -216,7 +191,11 @@ void testMap()
 {
     map<string,int> mp;
     mp["dsh"] += 23;
-    cout<<mp["htm"]<<endl;
+    cout<<mp.count("htm")<<endl;
+    cout<<mp["htm"]<<endl;      // int默认值为0
+    cout<<mp.count("htm")<<endl;
+    
+    printf("\n");
 
     map<char,string> mp2;
     mp2['a']="dsh";
