@@ -10,6 +10,7 @@
 #include <list>
 #include <set>
 #include <utility>
+#include <unordered_set>
 #include <map>
 
 #include "testStruct.h"
@@ -44,11 +45,11 @@ int main()
     // string s2 = "13";
     // s2[1] = (char)(57);
     // cout<<s2<<endl;
-    cout<<pow(10.0,2.0)<<endl;
+    // cout<<pow(10.0,2.0)<<endl;
     
     // test();
 
-    testString();
+    // testString();
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
@@ -60,7 +61,7 @@ int main()
     // testList();
     // testMap();
 
-    // testStruct();
+    testStruct();
 
     // int curAge = 0;
     // testPerson(curAge);
@@ -92,6 +93,11 @@ void testString()
     cout<<(s1=="dsh")<<endl;
     string s2 = "htm hahaha";
     cout<<(s2[3]==' ')<<endl;
+    printf("\n");
+
+    // 长度
+    cout<<s1.size()<<endl;
+    cout<<s1.length()<<endl;
     printf("\n");
 
     // 赋值
@@ -129,8 +135,12 @@ void testSet()
 {
     set<string> st{"cwf","htm"};
     st.insert("dsh");
-    
     if(st.find("cwf")!=st.end()) cout<<"存在"<<endl;
+
+    printf("\n");
+    
+    unordered_set<int> ust{1,2,3,5};
+    printf("%d %d",ust.count(2),ust.count(10));
 }
 
 void testVector()
@@ -210,11 +220,14 @@ void testMap()
 
 void testStruct()
 {
+    printf("直接使用结构体名称定义：\n");
     PersonStruct x("dsh",23,164.5);
-    cout<<x.name<<endl;
+    cout<<x.name + "\n"<<endl;
 
+    printf("使用地址创建结构体指针：\n");
     PersonStruct* dsh = &x;
     cout<<dsh->height<<endl;
+    printf("使用new创建结构体指针：\n");
     dsh = new PersonStruct();
     cout<<dsh->name<<endl;
 }
