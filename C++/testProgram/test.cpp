@@ -17,6 +17,7 @@
 #include "Person.h"
 #include "Student.h"
 #include "Player.h"
+#include "util.h"
 
 using namespace std;
 
@@ -56,12 +57,12 @@ int main()
 
     // testPair();
     // testSet();
-    // testVector();
+    testVector();
     // testStack();
     // testList();
     // testMap();
 
-    testStruct();
+    // testStruct();
 
     // int curAge = 0;
     // testPerson(curAge);
@@ -148,12 +149,12 @@ void testVector()
     
     vector<int> v(1,1);
     v.push_back(2);
-    vector<int> v2(3,3);
-    vector<int> v3(5,0);
+    vector<int> v2(3,4);
+    vector<int> v3(5,1);
     copy(v2.begin(),v2.end(),v3.begin()+1);
-    cout<<v3[3]<<endl;
-    cout<<v3[4]<<endl;
-    v = vector<int>{3,3,3};
+    
+    printVector(v3);
+    v = vector<int>{4,4,4};
     cout<<(v==v2)<<endl;
     // cout<<v.at(5)<<endl;
 
