@@ -55,7 +55,9 @@
 			"deque": "cpp",
 			"list": "cpp",
 			"set": "cpp",
-			"xtree": "cpp"
+			"xtree": "cpp",
+			"stack": "cpp",
+			"queue": "cpp"
 		}
 	}
 }

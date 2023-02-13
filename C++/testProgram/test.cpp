@@ -30,6 +30,7 @@ void testArray(int (*arr)[4]);
 void testSet();
 void testVector();
 void testStack();
+void testQueue();
 void testList();
 void testPair();
 void testMap();
@@ -57,8 +58,9 @@ int main()
 
     // testPair();
     // testSet();
-    testVector();
+    // testVector();
     // testStack();
+    testQueue();
     // testList();
     // testMap();
 
@@ -190,6 +192,26 @@ void testStack()
     queue<int> que;
     que.empty();
 }
+
+void testQueue()
+{
+    queue<int> q;
+    q.push(5);
+    q.push(7);
+    q.push(1);
+    // while(!q.empty())
+    // {
+        
+    // }
+    int len = q.size();
+    for(int i=0;i<len;i++)
+    {
+        cout<<q.front()<<endl;
+        q.pop();
+    }
+    cout<<q.empty()<<endl;
+}
+
 
 void testList()
 {
