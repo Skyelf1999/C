@@ -58,9 +58,9 @@ int main()
 
     // testPair();
     // testSet();
-    // testVector();
+    testVector();
     // testStack();
-    testQueue();
+    // testQueue();
     // testList();
     // testMap();
 
@@ -168,7 +168,7 @@ void testVector()
     vv.push_back({5,8,7});
     vv.push_back({2,6});
     sort(vv.begin(),vv.end());
-    for(int i=0;i<vv.size();i++) cout<<vv[i][0]<<endl;
+    for(auto ele : vv) cout<<ele[0]<<endl;
 
     cout<<"\n";
 
@@ -224,9 +224,11 @@ void testMap()
 {
     map<string,int> mp;
     mp["dsh"] += 23;
-    cout<<mp.count("htm")<<endl;
-    cout<<mp["htm"]<<endl;      // int默认值为0
-    cout<<mp.count("htm")<<endl;
+    cout<<mp.count("htm")<<endl;    // 0
+    cout<<mp.count("htm")<<endl;    // 0
+    // cout<<mp["htm"]++<<endl;        // int默认值为0
+    mp["htm"]++;
+    cout<<mp.count("htm")<< ", " << mp["htm"] <<endl;    // 1
     
     printf("\n");
 
