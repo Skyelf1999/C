@@ -57,7 +57,9 @@
 			"set": "cpp",
 			"xtree": "cpp",
 			"stack": "cpp",
-			"queue": "cpp"
+			"queue": "cpp",
+			"map": "cpp",
+			"unordered_set": "cpp"
 		}
 	}
 }

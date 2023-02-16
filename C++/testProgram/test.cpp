@@ -52,13 +52,13 @@ int main()
     // test();
 
     // testString();
-    // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-    // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
-    // testArray(arr);
+    int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
+    testArray(arr);
 
     // testPair();
     // testSet();
-    testVector();
+    // testVector();
     // testStack();
     // testQueue();
     // testList();
@@ -111,6 +111,7 @@ void testString()
 }
 
 
+
 // 以行指针形式接受二维数组
 void testArray(int (*arr)[4])
 {
@@ -118,6 +119,9 @@ void testArray(int (*arr)[4])
     cout<<"行长度："<<len<<endl;
     for(int i=0;i<len;i++)
         cout<<*(*arr+i)<<endl;
+    int b[] = {1,5,3,6,8};
+    changeArray(b,5);
+    printArray(b,5);
 }
 
 
@@ -237,6 +241,17 @@ void testMap()
     mp2['b'] = "htm";
     cout<<(mp2['c']=="")<<endl;
     cout<<mp2['a']<<endl;
+
+    cout<<"map自动排序测试"<<endl;
+    map<int,string> mp3;
+    mp3[2] = "dsh";
+    mp3[15] = "zdd";
+    mp3[1] = "zrq";
+    mp3[4] = "htm";
+    printMap(mp3);
+    map<int,string>::reverse_iterator it;
+    for(it=mp3.rbegin();it!=mp3.rend();++it)
+            cout<< it->first << "\t" << it->second <<endl;
 }
 
 
@@ -270,9 +285,9 @@ void testPerson(int& x)
 
 void testStudent()
 {
-    // Student dsh("dsh",23,true);
-    // cout<<dsh.gender<<endl;
-    // cout<<dsh.school<<endl;
+    Student htm("htm",21,true);
+    cout<<htm.gender<<endl;
+    cout<<htm.school<<endl;
     Student dsh("dsh",23,true,41823162,"USTB",4);
     cout<<dsh.age<<endl;
     cout<<dsh.school<<endl;
