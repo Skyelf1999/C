@@ -51,10 +51,10 @@ int main()
     
     // test();
 
-    // testString();
-    int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-    printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
-    testArray(arr);
+    testString();
+    // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
+    // testArray(arr);
 
     // testPair();
     // testSet();
@@ -106,6 +106,10 @@ void testString()
     // 赋值
     string s3 = s1;
     s1 += "?";
+    cout<<s3<<endl;
+
+    // 拼接
+    for(int i=0;i<3;i++) s3 += 'c';
     cout<<s3<<endl;
 
 }

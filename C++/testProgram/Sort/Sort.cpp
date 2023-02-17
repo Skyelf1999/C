@@ -25,7 +25,8 @@ using namespace std;
 
 int main()
 {
-
-    
+    int arr[] = {9,43,-54,4,-13,10,36};
+    int len = sizeof(arr)/sizeof(arr[0]);
+    HeapSortArr(arr,len);
 
 }

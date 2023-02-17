@@ -44,18 +44,18 @@ void printVector(vector<T> v)
 }
 
 
-// 输出map
-template<class T1,class T2>
-void printMap(map<T1,T2> mp, bool choice=true)
-{
-    if(choice)
-        for(auto p : mp)
-            cout<< p.first << "\t" << p.second <<endl;
-    else
-    {
-        map<T1,T2>::iterator it;
-        for(it=mp.rbegin();it!=mp.rend();it++)
-            cout<< it->first << "\t" << it->second <<endl;
-    }
-    cout<<"输出完毕"<<endl;
-}
+// // 输出map
+// template<class T1,class T2>
+// void printMap(map<T1,T2> mp, bool choice=true)
+// {
+//     if(choice)
+//         for(auto p : mp)
+//             cout<< p.first << "\t" << p.second <<endl;
+//     else
+//     {
+//         map<T1,T2>::iterator it;
+//         for(it=mp.rbegin();it!=mp.rend();it++)
+//             cout<< it->first << "\t" << it->second <<endl;
+//     }
+//     cout<<"输出完毕"<<endl;
+// }
