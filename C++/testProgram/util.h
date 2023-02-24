@@ -53,9 +53,8 @@ void printMap(map<T1,T2> mp, bool choice=true)
             cout<< p.first << "\t" << p.second <<endl;
     else
     {
-        map<T1,T2>::iterator it;
-        for(it=mp.rbegin();it!=mp.rend();it++)
-            cout<< it->first << "\t" << it->second <<endl;
+        // for(aotu it=mp.rbegin();it!=mp.rend();it++)
+        //     cout<< it->first << "\t" << it->second <<endl;
     }
     cout<<"输出完毕"<<endl;
 }

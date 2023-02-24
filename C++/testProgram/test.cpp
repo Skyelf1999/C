@@ -98,6 +98,13 @@ void testString()
     cout<<(s2[3]==' ')<<endl;
     printf("\n");
 
+    // 字符操作
+    char c = s1[0];
+    s1[0] = s1[1];
+    s1[1] = c;
+    cout<<s1<<endl;
+    printf("\n");
+
     // 长度
     cout<<s1.size()<<endl;
     cout<<s1.length()<<endl;
@@ -105,11 +112,7 @@ void testString()
 
     // 赋值
     string s3 = s1;
-    s1 += "?";
-    cout<<s3<<endl;
-
-    // 拼接
-    for(int i=0;i<3;i++) s3 += 'c';
+    s1 += '?';
     cout<<s3<<endl;
 
 }
