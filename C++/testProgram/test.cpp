@@ -113,7 +113,11 @@ void testString()
     // 赋值
     string s3 = s1;
     s1 += '?';
-    cout<<s3<<endl;
+    cout<<s1<<endl;
+
+    // ASCII码
+    cout<<('a'>64)<<endl;
+    cout<<(char)('a'+2)<<endl;
 
 }
 
@@ -150,6 +154,11 @@ void testSet()
     set<string> st{"cwf","htm"};
     st.insert("dsh");
     if(st.find("cwf")!=st.end()) cout<<"存在"<<endl;
+
+    printf("\n");
+
+    st.insert("dsh");
+    for(auto name : st) cout<<name<<endl;
 
     printf("\n");
     
@@ -210,6 +219,7 @@ void testQueue()
     q.push(5);
     q.push(7);
     q.push(1);
+    q.emplace(8);
     // while(!q.empty())
     // {
         
