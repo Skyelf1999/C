@@ -51,14 +51,14 @@ int main()
     
     // test();
 
-    testString();
+    // testString();
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
 
     // testPair();
     // testSet();
-    // testVector();
+    testVector();
     // testStack();
     // testQueue();
     // testList();
@@ -174,8 +174,24 @@ void testVector()
     vector<int> v2(3,4);
     vector<int> v3(5,1);
     copy(v2.begin(),v2.end(),v3.begin()+1);
-    
     printVector(v3);
+    auto res = find(v3.begin(),v3.end(),5);
+    if(res!=v3.end())
+    {
+        cout<< *(res-1) << " " << *(res+1) <<endl;
+        vector<int> temp(3);
+        copy(res-1,res+2,temp.begin());
+        printVector(temp);
+    }
+    else cout<<"目标不存在"<<endl;
+
+    v3[3] = 10;
+    auto l = v3.end()-1;
+    while(l>=v3.begin())
+    {
+        cout<<*(l--)<<endl;
+    }
+
     v = vector<int>{4,4,4};
     cout<<(v==v2)<<endl;
     // cout<<v.at(5)<<endl;
