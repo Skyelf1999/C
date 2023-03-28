@@ -28,7 +28,7 @@ void printArray(T *arr,int len)
         cout<<*(arr+i)<<endl;
 }
 template<class T>
-void changeArray(T *arr,int len)
+void changeArray(T arr[],int len)
 {
     arr[len-1] = 999;
 }
