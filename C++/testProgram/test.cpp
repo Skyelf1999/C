@@ -51,7 +51,7 @@ int main()
     
     // test();
 
-    testString();
+    // testString();
     // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
     // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
     // testArray(arr);
@@ -62,7 +62,7 @@ int main()
     // testStack();
     // testQueue();
     // testList();
-    // testMap();
+    testMap();
 
     // testStruct();
 
@@ -263,6 +263,7 @@ void testMap()
 {
     map<string,int> mp;
     mp["dsh"] += 23;
+    printf("对不存在的k进行自增后的v：%d\n",mp["dsh"]);
     cout<<mp.count("htm")<<endl;    // 0
     cout<<mp.count("htm")<<endl;    // 0
     // cout<<mp["htm"]++<<endl;        // int默认值为0
