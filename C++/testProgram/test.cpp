@@ -273,6 +273,7 @@ void testMap()
     printf("\n");
 
     map<char,string> mp2;
+    
     mp2['a']="dsh";
     mp2['b'] = "htm";
     cout<<(mp2['c']=="")<<endl;
