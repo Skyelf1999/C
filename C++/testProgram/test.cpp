@@ -13,7 +13,6 @@
 #include <unordered_set>
 #include <map>
 
-#include "testStruct.h"
 #include "Person.h"
 #include "Student.h"
 #include "Player.h"
@@ -25,7 +24,6 @@ using namespace std;
 // 测试函数
 void test();
 void testString();
-void testArray(int (*arr)[4]);
 
 void testSet();
 void testVector();
@@ -35,7 +33,6 @@ void testList();
 void testPair();
 void testMap();
 
-void testStruct();
 void testPerson(int& x);
 void testStudent();
 void testPlayer();
@@ -52,9 +49,6 @@ int main()
     // test();
 
     // testString();
-    // int arr[3][4] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-    // printf("%d %d %d\n",sizeof(arr),sizeof(arr[0]),sizeof(arr[0][0]));
-    // testArray(arr);
 
     // testPair();
     // testSet();
@@ -62,9 +56,7 @@ int main()
     // testStack();
     // testQueue();
     // testList();
-    testMap();
-
-    // testStruct();
+    // testMap();
 
     // int curAge = 0;
     // testPerson(curAge);
@@ -121,20 +113,6 @@ void testString()
     cout<<('a'>64)<<endl;
     cout<<(char)('a'+2)<<endl;
 
-}
-
-
-
-// 以行指针形式接受二维数组
-void testArray(int (*arr)[4])
-{
-    int len = sizeof(*arr)/sizeof(**arr);
-    cout<<"行长度："<<len<<endl;
-    for(int i=0;i<len;i++)
-        cout<<*(*arr+i)<<endl;
-    int b[] = {1,5,3,6,8};
-    changeArray(b,5);
-    printArray(b,5);
 }
 
 
@@ -259,33 +237,51 @@ void testList()
     cout<<myList.front()<<endl;
 }
 
+/**
+ * 测试map容器的使用
+ */
 void testMap()
 {
+    // 创建一个string到int的map容器
     map<string,int> mp;
+    // 对不存在的键"dsh"进行自增操作，会自动初始化为0再自增
     mp["dsh"] += 23;
+    // 输出自增后的值，应为23
     printf("对不存在的k进行自增后的v：%d\n",mp["dsh"]);
+    // 检查"htm"是否存在于map中，不存在则返回0
     cout<<mp.count("htm")<<endl;    // 0
     cout<<mp.count("htm")<<endl;    // 0
+    // 注释掉的代码：对不存在的键"htm"进行自增后输出，会先初始化为0再自增
     // cout<<mp["htm"]++<<endl;        // int默认值为0
+    // 对"htm"的值进行自增操作
     mp["htm"]++;
+    // 输出"htm"是否存在于map中及其值，应为1和1
     cout<<mp.count("htm")<< ", " << mp["htm"] <<endl;    // 1
     
     printf("\n");
 
+    // 创建一个char到string的map容器
     map<char,string> mp2;
     
+    // 向map2中添加键值对
     mp2['a']="dsh";
     mp2['b'] = "htm";
+    // 检查并输出'c'对应的值是否为空字符串
     cout<<(mp2['c']=="")<<endl;
+    // 输出'a'对应的值
     cout<<mp2['a']<<endl;
 
     cout<<"map自动排序测试"<<endl;
+    // 创建一个int到string的map容器
     map<int,string> mp3;
+    // 向map3中添加键值对
     mp3[2] = "dsh";
     mp3[15] = "zdd";
     mp3[1] = "zrq";
     mp3[4] = "htm";
+    // 调用printMap函数输出map3的内容
     printMap(mp3);
+    // 使用反向迭代器逆序输出map3的内容
     map<int,string>::reverse_iterator it;
     for(it=mp3.rbegin();it!=mp3.rend();++it)
             cout<< it->first << "\t" << it->second <<endl;
@@ -294,20 +290,6 @@ void testMap()
 
 
 ////////////////////////////////// 面向对象 //////////////////////////////////
-
-void testStruct()
-{
-    printf("直接使用结构体名称定义：\n");
-    PersonStruct x("dsh",23,164.5);
-    cout<<x.name + "\n"<<endl;
-
-    printf("使用地址创建结构体指针：\n");
-    PersonStruct* dsh = &x;
-    cout<<dsh->height<<endl;
-    printf("使用new创建结构体指针：\n");
-    dsh = new PersonStruct();
-    cout<<dsh->name<<endl;
-}
 
 
 void testPerson(int& x)

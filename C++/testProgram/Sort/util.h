@@ -28,9 +28,18 @@ void printArray(T *arr,int len)
         cout<<*(arr+i)<<endl;
 }
 template<class T>
-void changeArray(T *arr,int len)
+void changeArray(T arr[],int len)
 {
     arr[len-1] = 999;
+}
+
+
+// 输出数组
+template<class T>
+void print1DArray(T *arr,int len)
+{
+    for(int i=0;i<len;i++) cout<<*(arr+i) << '\t';
+    printf("\n\n");
 }
 
 
@@ -44,18 +53,17 @@ void printVector(vector<T> v)
 }
 
 
-// // 输出map
-// template<class T1,class T2>
-// void printMap(map<T1,T2> mp, bool choice=true)
-// {
-//     if(choice)
-//         for(auto p : mp)
-//             cout<< p.first << "\t" << p.second <<endl;
-//     else
-//     {
-//         map<T1,T2>::iterator it;
-//         for(it=mp.rbegin();it!=mp.rend();it++)
-//             cout<< it->first << "\t" << it->second <<endl;
-//     }
-//     cout<<"输出完毕"<<endl;
-// }
+// 输出map
+template<class T1,class T2>
+void printMap(map<T1,T2> mp, bool choice=true)
+{
+    if(choice)
+        for(auto p : mp)
+            cout<< p.first << "\t" << p.second <<endl;
+    else
+    {
+        // for(aotu it=mp.rbegin();it!=mp.rend();it++)
+        //     cout<< it->first << "\t" << it->second <<endl;
+    }
+    cout<<"输出完毕"<<endl;
+}

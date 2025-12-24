@@ -15,7 +15,7 @@
 
 #include "DataClass.h"
 #include "InsertSort.h"
-#include "HalfSort.h"
+#include "SwapSort.h"
 #include "SelectSort.h"
 
 
@@ -27,6 +27,10 @@ int main()
 {
     int arr[] = {9,43,-54,4,-13,10,36};
     int len = sizeof(arr)/sizeof(arr[0]);
-    HeapSortArr(arr,len);
+
+    // InsertDirectSort(arr,len);
+    // InsertShellSort(arr,len);
+    // HeapSortArr(arr,len);
+    SwapNormalSort(arr,len);
 
 }

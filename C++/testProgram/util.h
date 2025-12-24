@@ -34,6 +34,15 @@ void changeArray(T arr[],int len)
 }
 
 
+// 输出数组
+template<class T>
+void print1DArray(T *arr,int len)
+{
+    for(int i=0;i<len;i++) cout<<*(arr+i) << ' ' <<endl;
+    printf();
+}
+
+
 // 输出vector
 template<class T>
 void printVector(vector<T> v)
