@@ -79,9 +79,11 @@ void init2DArray(){
 template<class T>
 void print1DArray(T* arr)
 {
+    // 参数传入数组后退化，必须重新计算其长度：总长/元素长
     int arrSize = sizeof(arr);
     int elementSize = sizeof(*arr);
     int arrLen = arrSize/elementSize;
+
     printf("（数组大小：%d\t元素大小：%d\t数组长度：%d）\n", arrSize, elementSize, arrLen);
     for(int i=0;i<arrLen;i++)  cout<< arr[i] << " ";
     cout<< "\n" <<endl;
