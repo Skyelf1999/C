@@ -21,7 +21,7 @@ template<class T> void print2DArray_normal(T (*arr)[COL], int row);
 
 // 测试用变量
 int a[] = {1, 2, 3, 4, 5};
-char b[ROW];
+char charArray[ROW];
 int* c;
 int **arr_malloc;
 int (*arr_normal)[COL];
@@ -36,8 +36,10 @@ void testArray(){
 
 // 初始化一维数组
 void init1DArray(){
-    for(int i=0;i<ROW;i++) b[i] = (char)('0'+i);
-    print1DArray(b);
+    // 初始化字符数组b
+    // 使用循环将每个元素设置为对应的ASCII字符，'0'到'0'+ROW-1
+    for(int i=0;i<ROW;i++) charArray[i] = (char)('0'+i);
+    print1DArray(charArray);
 
     c = (int*)malloc(sizeof(int) * 5);
 }
@@ -104,10 +106,12 @@ void print2DArray_malloc(T** arr, int row, int col)
 template<class T>
 void print2DArray_normal(T (*arr)[COL], int row)
 {
+    // 已传入行数，求单行元素数量
     int rowSize = sizeof(*arr);
     int elementSize = sizeof(**arr);
     int rowLen = sizeof(*arr)/sizeof(**arr);
     printf("普通定义\t数组：%d x %d\t行大小：%d\t单个元素大小：%d\n", row, rowLen, rowSize, elementSize);
+    
     for(int i=0;i<row;i++){
         for(int j=0;j<rowLen;j++) cout<< arr[i][j] << "\t";
         cout<<endl;

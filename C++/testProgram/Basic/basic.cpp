@@ -9,7 +9,7 @@
 using namespace std;
 
 int main() {
-    // testArray();
+    testArray();
     // testStruct();
-    testLinkList();
+    // testLinkList();
 }
