@@ -13,9 +13,9 @@
 #include <unordered_set>
 #include <map>
 
-#include "Person.h"
-#include "Student.h"
-#include "Player.h"
+#include "ObjectStruct/Person.h"
+#include "ObjectStruct/Student.h"
+#include "ObjectStruct/Player.h"
 #include "util.h"
 
 using namespace std;
@@ -40,11 +40,11 @@ void testPlayer();
 
 int main()
 {
-    // string s1 = "11";
-    // string s2 = "13";
-    // s2[1] = (char)(57);
-    // cout<<s2<<endl;
-    // cout<<pow(10.0,2.0)<<endl;
+    string s1 = "11";
+    string s2 = "13";
+    s2[1] = (char)(57);
+    cout<<s2<<endl;
+    cout<<pow(10.0,2.0)<<endl;
     
     // test();
 

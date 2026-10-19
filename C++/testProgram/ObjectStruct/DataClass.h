@@ -5,7 +5,7 @@
 using namespace std;
 
 /*
-
+    通用数据结构，可用于测试排序算法
 */
 
 

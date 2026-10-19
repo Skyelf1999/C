@@ -5,6 +5,8 @@
 #include "testArray.h"
 #include "testStruct.h"
 #include "testLinkList.h"
+#include "testTree.h"
+
 
 using namespace std;
 

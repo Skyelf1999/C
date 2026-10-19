@@ -39,7 +39,7 @@ template<class T>
 void print1DArray(T *arr,int len)
 {
     for(int i=0;i<len;i++) cout<<*(arr+i) << ' ' <<endl;
-    printf();
+    printf("");
 }
 
 
