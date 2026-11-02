@@ -11,11 +11,12 @@
 using namespace std;
 
 int main() {
-    testArray();
+    // printf("hello world\n");
+    // int x = 2;
+    // x += 3;
+    // printf("%d",x);
+
+    // testArray();
     // testStruct();
-    // testLinkList();
-    printf("hello world\n");
-    int x = 2;
-    x += 3;
-    printf("%d",x);
+    testLinkList();
 }

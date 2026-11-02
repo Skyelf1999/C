@@ -6,9 +6,6 @@
 
 using namespace std;
 
-void initTreadTree(ThreadTreeNode* root);
-void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre);
-
 // 二叉树
 struct TreeNode
 {
@@ -33,19 +30,9 @@ struct ThreadTreeNode
 };
 
 
-// 二叉树线索化：中序遍历
-void initTreadTree(ThreadTreeNode* root)
-{
-    // 连接前后用的结点指针
-    ThreadTreeNode* pre = nullptr;
-    if(root != nullptr)
-    {
-        ldrTreadTread(root,pre);
-        // 处理最后一个节点
-        pre->right = nullptr;
-        pre->rightTag = 1;
-    }
-}
+void initTreadTree(ThreadTreeNode* root);
+void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre);
+
 void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre)
 {
     if(root==nullptr) return;
@@ -64,5 +51,18 @@ void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre)
     
     // 准备进行下一步
     pre = root;
-    ldrTread(root->right,pre);
+    ldrTreadTread(root->right,pre);
+}
+// 二叉树线索化：中序遍历
+void initTreadTree(ThreadTreeNode* root)
+{
+    // 连接前后用的结点指针
+    ThreadTreeNode* pre = nullptr;
+    if(root != nullptr)
+    {
+        ldrTreadTread(root,pre);
+        // 处理最后一个节点
+        pre->right = nullptr;
+        pre->rightTag = 1;
+    }
 }
