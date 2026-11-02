@@ -2,12 +2,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include<string>
+#include <string>
 
 using namespace std;
 
-void ldrTreadTree(TreeNode* root);
-void ldrTread(TreeNode* root, ThreadTreeNode* pre);
+void initTreadTree(ThreadTreeNode* root);
+void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre);
 
 // 二叉树
 struct TreeNode
@@ -34,24 +34,24 @@ struct ThreadTreeNode
 
 
 // 二叉树线索化：中序遍历
-void ldrTreadTree(ThreadTreeNode* root)
+void initTreadTree(ThreadTreeNode* root)
 {
     // 连接前后用的结点指针
     ThreadTreeNode* pre = nullptr;
     if(root != nullptr)
     {
-        ldrTread(root,pre);
+        ldrTreadTread(root,pre);
         // 处理最后一个节点
         pre->right = nullptr;
         pre->rightTag = 1;
     }
 }
-void ldrTread(ThreadTreeNode* root, ThreadTreeNode* pre)
+void ldrTreadTread(ThreadTreeNode* root, ThreadTreeNode* pre)
 {
     if(root==nullptr) return;
 
     // 递归线索化左子树
-    if(root->left != nullptr) ldrTread(root->left,pre);
+    if(root->left != nullptr) ldrTreadTread(root->left,pre);
     
     // 连接前驱与当前结点
     root->leftTag = 1;
